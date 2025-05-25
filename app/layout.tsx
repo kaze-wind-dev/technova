@@ -1,8 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Zen_Kaku_Gothic_New, Outfit } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
 
-const inter = Inter({ subsets: ["latin"] });
+const zenKakuGothicNew = Zen_Kaku_Gothic_New({
+  weight: ["500", "700"],
+  subsets: ["latin"],
+  variable: "--tn-font-base",
+});
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["700"],
+  variable: "--tn-font-sub",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +25,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html
+      lang="ja"
+      className={`${zenKakuGothicNew.variable} ${outfit.variable} ` }
+    >
+      <body className="tracking-wider font-medium font-base text-[16px]  ">
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

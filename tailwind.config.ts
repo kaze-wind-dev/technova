@@ -8,10 +8,34 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        black: "var(--tn-color-black)",
+        primary: "var(--tn-color-primary)",
+        "primary-hover": "var(--tn-color-primary-hover)",
+        theme: "var(--tn-color-theme)",
+        gray: "var(--tn-color-gray)",
+        white: "var(--tn-color-white)",
+      },
+      backgroundColor: {
+        primary: "var(--tn-bg-primary)",
+        "primary-hover": "var(--tn-bg-primary-hover)",
+        theme: "var(--tn-bg-theme)",
+        gray: "var(--tn-bg-gray)",
+      },
+      borderColor: {
+        primary: "var(--tn-border-primary)",
+        gray: "var(--tn-border-gray)",
+        white: "var(--tn-border-white)",
+      },
+      textColor: {
+        primary: "var(--tn-color-primary)",
+        gray: "var(--tn-color-gray)",
+        white: "var(--tn-color-white)",
+        black: "var(--tn-color-black)",
+      },
+       fontFamily: {
+          base: ['var(--tn-font-base)', 'sans-serif'],
+          sub: ['var(--tn-font-sub)', 'sans-serif'],
       },
     },
   },
