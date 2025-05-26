@@ -24,13 +24,6 @@
    --tn-border-gray: #D9D9D9;
  }
 
-/* body {
-  font-family: var(--tn-font-base);
-} */
- 
- .logo {
-   @apply w-[236px];
- }
 
  .btn-arrow-white>span {
    padding-right: 1.6875rem;
