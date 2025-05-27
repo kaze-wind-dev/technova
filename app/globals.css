@@ -47,3 +47,43 @@
  .btn-arrow-white:hover>span::after {
    translate: 25% -50%;
  }
+
+ .btn-arrow-primary>span {
+   padding-right: 1.6875rem;
+   display: inline-block;
+   position: relative;
+   z-index: 1;
+ }
+
+ .btn-arrow-primary>span::after {
+   content: '';
+   position: absolute;
+   top: 50%;
+   right: 0;
+   translate: 0 -50%;
+   width: 1rem;
+   height: 1rem;
+   background: url(/arrow-right-primary.svg) no-repeat center / contain;
+   transition: translate .3s;
+ }
+
+ .btn-arrow-primary:hover>span::after {
+   translate: 25% -50%;
+ }
+ .btn-window-primary>span {
+   padding-right: 2rem;
+   display: inline-block;
+   position: relative;
+   z-index: 1;
+ }
+
+ .btn-window-primary>span::after {
+   content: '';
+   position: absolute;
+   top: 50%;
+   right: 0;
+   translate: 0 -50%;
+   width: 1rem;
+   height: 1rem;
+   background: url(/icon-window-primary.svg) no-repeat center / contain;
+ }

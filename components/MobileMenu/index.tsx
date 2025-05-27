@@ -27,11 +27,11 @@ const MobileMenu = () => {
       </div>
       <div
       onClick={toggleMenu}
-      className={`block lg:hidden bg-black fixed inset-0 z-30 w-[100%] h-[100%] transition duration-300  ${
+      className={`block lg:hidden cursor-pointer bg-black fixed inset-0 z-30 w-[100%] h-[100%] transition duration-300  ${
             isOpen ? "opacity-90 visible " : "opacity-0 invisible"
         }`}></div>
       <div className={`block lg:hidden bg-white fixed top-0 right-0 z-40 w-[80%] h-[100%] transition duration-300 ${
-            isOpen ? " top-6 translate-x-0" : "top-8 translate-x-[100%]"
+            isOpen ? " translate-x-0" : "translate-x-[100%]"
         }`}>
         <div className="py-16 px-[8%]">
           <div className="flex flex-col items-center text-center">
@@ -56,7 +56,7 @@ const MobileMenu = () => {
             </nav>
             <LinkButton
               href="/contact"
-              addClass="bg-primary text-white hover:bg-primary-hover btn-arrow-white mt-12"
+              addClass="bg-primary text-white font-bold hover:bg-primary-hover btn-arrow-white mt-12"
             >
               <span>お問い合わせはこちら</span>
             </LinkButton>

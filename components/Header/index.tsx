@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className="py-3 px-4 lg:px-6 lg:py-4 xl:px-8" >
       <div className="flex flex-row items-center justify-between">
-      <h1 className="w-[164px] md:w-[200px] lg:w-[236px]">
+      <div className="w-[164px] md:w-[200px] lg:w-[236px]"> 
         <Link href="/">
           <Image
             src="/logo.png"
@@ -16,7 +16,7 @@ const Header = () => {
             height={67}
           />
         </Link>
-      </h1>
+      </div>
       <nav className="hidden lg:block">
         <ul className="flex flex-row items-center justify-center xl:gap-6 gap-5">
           <li>
@@ -36,7 +36,7 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <LinkButton href="/contact" addClass="bg-primary text-white hover:bg-primary-hover btn-arrow-white hidden lg:block"><span>お問い合わせはこちら</span></LinkButton>
+      <LinkButton href="/contact" addClass="bg-primary text-white font-bold hover:bg-primary-hover btn-arrow-white hidden lg:block"><span>お問い合わせはこちら</span></LinkButton>
       <MobileMenu/>
       </div>
     </header>

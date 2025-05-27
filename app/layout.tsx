@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Zen_Kaku_Gothic_New, Outfit } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const zenKakuGothicNew = Zen_Kaku_Gothic_New({
   weight: ["500", "700"],
@@ -33,6 +34,7 @@ export default function RootLayout({
         <div className="overflow-hidden ">
         <Header />
         {children}
+        <Footer />
         </div>
       </body>
     </html>
