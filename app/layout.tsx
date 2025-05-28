@@ -30,8 +30,8 @@ export default function RootLayout({
       lang="ja"
       className={`${zenKakuGothicNew.variable} ${outfit.variable} ` }
     >
-      <body className="tracking-wider font-medium font-base text-sm lg:text-base">
-        <div className="overflow-hidden ">
+      <body className="tracking-wider leading-normal font-medium font-base text-sm lg:text-base">
+        <div className="overflow-hidden">
         <Header />
         {children}
         <Footer />
