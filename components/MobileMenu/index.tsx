@@ -9,11 +9,10 @@ const MobileMenu = () => {
   const toggleMenu = () => setOpen(!isOpen);
   return (
     <>
-      <div
+      <button
         onClick={toggleMenu}
         className="bg-primary block lg:hidden w-12 h-12 fixed top-3 right-4 z-50 rounded-lg"
         aria-label="モバイルメニューを開く"
-          role="button"
       >
         <span className={`block bg-white h-[2px] w-8 absolute inset-x-2 transition duration-300 ${
             isOpen ? "rotate-45 top-6" : "top-4 "
@@ -24,7 +23,7 @@ const MobileMenu = () => {
         <span className={`block bg-white h-[2px] w-8 absolute inset-x-2 transition duration-300 ${
             isOpen ? "-rotate-45 top-6" : "top-8 "
         }`}></span>
-      </div>
+      </button>
       <div
       onClick={toggleMenu}
       className={`block lg:hidden cursor-pointer bg-black fixed inset-0 z-30 w-[100%] h-[100%] transition duration-300  ${
@@ -38,19 +37,19 @@ const MobileMenu = () => {
             <nav className="">
               <ul className="text-base sm:text-lg md:text-xl flex flex-col items-center text-center gap-3">
                 <li>
-                  <Link href="/">トップページ</Link>
+                  <Link onClick={toggleMenu} href="/">トップページ</Link>
                 </li>
                 <li>
-                  <Link href="/services">事業内容</Link>
+                  <Link onClick={toggleMenu} href="/services">事業内容</Link>
                 </li>
                 <li>
-                  <Link href="/works">事例紹介</Link>
+                  <Link onClick={toggleMenu} href="/works">事例紹介</Link>
                 </li>
                 <li>
-                  <Link href="/company">会社概要</Link>
+                  <Link onClick={toggleMenu} href="/company">会社概要</Link>
                 </li>
                 <li>
-                  <Link href="/recruit">採用情報</Link>
+                  <Link onClick={toggleMenu} href="/recruit">採用情報</Link>
                 </li>
               </ul>
             </nav>
