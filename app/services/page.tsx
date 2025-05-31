@@ -4,7 +4,7 @@ import SectionTitle from "@/components/SectionTitle";
 import Inner from "@/components/Inner";
 import Section from "@/components/Section";
 
-export default function Home() {
+export default function ServicesPage() {
   return (
     <main>
       <Hero
