@@ -20,19 +20,19 @@ export default function Home() {
           <div className="flex items-center justify-center gap-4 md:gap-6 mt-8 md:mt-10">
             <LinkButton
               href="/"
-              addClass="bg-primary text-white font-bold hover:bg-primary-hover btn-arrow-white hidden lg:block"
+              addClass="bg-primary text-white font-bold hover:bg-primary-hover btn-arrow-white"
             >
               <span>トップページに戻る</span>
             </LinkButton>
             <LinkButton
               href="/contact"
-              addClass="bg-primary text-white font-bold hover:bg-primary-hover btn-arrow-white hidden lg:block"
+              addClass="bg-primary text-white font-bold hover:bg-primary-hover btn-arrow-white"
             >
               <span>お問い合わせはこちら</span>
             </LinkButton>
             <LinkButton
               href="/site"
-              addClass="bg-primary text-white font-bold hover:bg-primary-hover btn-arrow-white hidden lg:block"
+              addClass="bg-primary text-white font-bold hover:bg-primary-hover btn-arrow-white"
             >
               <span>サイトマップ</span>
             </LinkButton>
