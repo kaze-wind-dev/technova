@@ -100,16 +100,23 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex items-center justify-between flex-wrap gap-y-6 w-[90%] mx-auto mt-10 md:mt-16">
-
-       <ul className="flex flex-row gap-3 text-[11px] md:text-sm">
-              <li>
-                <Link href="/privacy" className="underline">プライバシーポリシー</Link>
-              </li>
-              <li>
-                <Link href="/site" className="underline">サイトマップ</Link>
-              </li>
-            </ul>
-            <p ><small className="text-[11px] md:text-sm">&copy; 2025 TechNova Co., Ltd</small></p>
+        <ul className="flex flex-row gap-3 text-[11px] md:text-sm">
+          <li>
+            <Link href="/privacy" className="underline">
+              プライバシーポリシー
+            </Link>
+          </li>
+          <li>
+            <Link href="/site" className="underline">
+              サイトマップ
+            </Link>
+          </li>
+        </ul>
+        <p>
+          <small className="text-[11px] md:text-sm">
+            &copy; 2025 TechNova Co., Ltd
+          </small>
+        </p>
       </div>
     </footer>
   );

@@ -1,6 +1,8 @@
 // import Image from "next/image";
 import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
+import Inner from "@/components/Inner";
+import Section from "@/components/Section";
 export default function Home() {
   return (
     <main>
@@ -8,8 +10,8 @@ export default function Home() {
         pageTitle="会社概要"
         pageDesc="TechNovaは、テクノロジーの力で社会とビジネスの未来を創るITソリューション企業です。"
       />
-      <section className="py-16 md:py-20 lg:py-24">
-        <div className="w-[90%] mx-auto max-w-[1400px]">
+      <Section>
+        <Inner>
           <SectionTitle
             mainTitle="ビジョン・ミッション"
             subTitle="Mission"
@@ -64,10 +66,10 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </div>
-      </section>
-      <section className="py-16 md:py-20 lg:py-24 bg-theme">
-        <div className="w-[90%] mx-auto max-w-[1400px]">
+        </Inner>
+      </Section>
+      <Section addClass="bg-theme">
+        <Inner>
           <SectionTitle
             mainTitle="会社概要"
             subTitle="Company"
@@ -75,18 +77,26 @@ export default function Home() {
           />
           <table className="w-full mx-auto max-w-[960px]">
             <tbody>
-            <tr className="border-b border-solid border-gray ">
-              <th className="font-bold leading-loose tracking-wider w-[120px] text-left py-[1.25em] pt-0">会社名</th>
-              <td className="font-bold leading-loose tracking-wider text-left pl-[1.25em]  py-[1.25em] pt-0">TechNova株式会社</td>
-            </tr>
-            <tr className="border-b border-solid border-gray ">
-              <th className="font-bold leading-loose tracking-wider w-[120px] text-left py-[1.25em]">会社名</th>
-              <td className="font-bold leading-loose tracking-wider text-left pl-[1.25em]  py-[1.25em]">TechNova株式会社</td>
-            </tr>
+              <tr className="border-b border-solid border-gray ">
+                <th className="font-bold leading-loose tracking-wider w-[120px] text-left py-[1.25em] pt-0">
+                  会社名
+                </th>
+                <td className="font-bold leading-loose tracking-wider text-left pl-[1.25em]  py-[1.25em] pt-0">
+                  TechNova株式会社
+                </td>
+              </tr>
+              <tr className="border-b border-solid border-gray ">
+                <th className="font-bold leading-loose tracking-wider w-[120px] text-left py-[1.25em]">
+                  会社名
+                </th>
+                <td className="font-bold leading-loose tracking-wider text-left pl-[1.25em]  py-[1.25em]">
+                  TechNova株式会社
+                </td>
+              </tr>
             </tbody>
           </table>
-        </div>
-      </section>
+        </Inner>
+      </Section>
     </main>
   );
 }
