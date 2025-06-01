@@ -1,0 +1,48 @@
+.moreBtnLink {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  font-weight: 700;
+  letter-spacing: 0.05;
+  font-size: 0.875rem;
+  line-height: 1.75rem;
+  padding-right: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.moreBtnLink::after {
+  content: "";
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  translate: 0 -50%;
+  background: url(/arrow-right-white.svg) no-repeat center / 0.75rem auto,
+    var(--tn-color-primary);
+  transition: 0.3s;
+}
+
+.moreBtnLink:hover::after {
+  translate: 25% -50%;
+  background: url(/arrow-right-white.svg) no-repeat center / 0.75rem auto,
+    var(--tn-color-primary-hover);
+}
+
+@media screen and (min-width: 767px) {
+  .moreBtnLink {
+    font-size: 1rem;
+    line-height: 2rem;
+    padding-right: 2.75rem;
+  }
+  .moreBtnLink::after {
+    width: 2rem;
+    height: 2rem;
+    background-size: 1rem;
+}
+.moreBtnLink:hover::after {
+    background-size: 1rem;
+}
+}
