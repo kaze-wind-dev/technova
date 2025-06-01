@@ -8,7 +8,7 @@
    --tn-color-primary: #0A77F4;
    --tn-color-primary-hover: #0c6cda;
    --tn-color-theme: #E5EFFC;
-   --tn-color-gray: #EAEAEA;
+   --tn-color-gray: #F9F9F9;
    --tn-color-white: #fff;
 
    --tn-bg-primary: var(--tn-color-primary);
@@ -23,7 +23,6 @@
    --tn-border-white: var(--tn-color-white);
    --tn-border-gray: #D9D9D9;
  }
-
 
  .btn-arrow-white>span {
    padding-right: 1.6875rem;
@@ -70,6 +69,7 @@
  .btn-arrow-primary:hover>span::after {
    translate: 25% -50%;
  }
+
  .btn-window-primary>span {
    padding-right: 2rem;
    display: inline-block;
@@ -87,3 +87,4 @@
    height: 1rem;
    background: url(/icon-window-primary.svg) no-repeat center / contain;
  }
+
