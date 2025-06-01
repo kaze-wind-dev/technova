@@ -1,0 +1,43 @@
+// import Image from "next/image";
+import { getWorksList } from "@/libs/microcms";
+
+import { WORKS_LIST_LIMIT } from "@/constants";
+
+import Hero from "@/components/Hero";
+import SectionTitle from "@/components/SectionTitle";
+import Inner from "@/components/Inner";
+import Section from "@/components/Section";
+
+import CtaSection from "@/components/CtaSection";
+import WorksList from "@/components/WorksList";
+import Pagination from "@/components/Pagination";
+
+
+export default async function WorksListPage() {
+  const {contents:works, totalCount} = await getWorksList({
+    limit:  WORKS_LIST_LIMIT,
+  });
+  return (
+    <main>
+      <Hero
+        pageTitle="事例紹介"
+        pageDesc={`私たちがこれまでに手がけたプロジェクトの一部をご紹介します。`}
+      />
+      <Section>
+        <Inner>
+          <SectionTitle
+            mainTitle="事例紹介"
+            subTitle="Works"
+            horizontal="center"
+          />
+          <WorksList works={works}/>
+          <Pagination totalCount={totalCount} prepage={WORKS_LIST_LIMIT} basePath="works"/>
+        </Inner>
+      </Section>
+      <CtaSection
+        title={`「このようなサイトを作ってほしい」\n「自社にも導入したい」と思ったら、\nぜひお気軽にお問い合わせください。`}
+        btnText="お問い合わせはこちらから"
+      />
+    </main>
+  );
+}
