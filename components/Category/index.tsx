@@ -1,17 +1,18 @@
+import Link from "next/link";
+
 type Props = {
   name: string;
-  linkType?: boolean;
   href?: string;
 };
 
-const Category = ({ name, linkType = false, href }: Props) => {
-  return linkType && href ? (
-    <a
+const Category = ({ name, href }: Props) => {
+  return href ? (
+    <Link
       href={href}
       className="bg-primary text-white font-bold px-4 py-2 inline-block rounded-full text-small md:text-base transition hover:bg-primary-hover"
     >
       {name}
-    </a>
+    </Link>
   ) : (
     <span className="bg-primary text-white font-bold px-4 py-2 inline-block rounded-full text-small md:text-base">
       {name}
