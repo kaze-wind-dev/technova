@@ -35,6 +35,12 @@ export type News = {
   };
 } & MicroCMSListContent;
 
+
+export type Category = {
+  name: string;
+  contents?: string;
+} & MicroCMSListContent;
+
 // お知らせ
 export const getNewsList = async(queries?: MicroCMSQueries) => {
   const listData = await client.getList<News>({
@@ -50,6 +56,47 @@ export const getNewsDetail = async(
 )=>{
   const singleData = await client.getListDetail<News>({
   endpoint: "news",
+    contentId,
+    queries,
+  });
+  return singleData;
+}
+
+// カテゴリ
+export const getCategoryList = async(queries?: MicroCMSQueries) => {
+  const categoryList = await client.getList<Category>({
+    endpoint: "categories",
+    queries,
+  });
+  return categoryList;
+}
+
+export type Work = {
+  title: string;
+  description: string;
+  body: string;
+  thumbnail?: MicroCMSImage;
+  images?: MicroCMSImage[];
+  category:{
+    name : string
+  };
+} & MicroCMSListContent;
+
+// 事例紹介
+export const getWorksList = async(queries?: MicroCMSQueries) => {
+  const listData = await client.getList<Work>({
+    endpoint: "works",
+    queries,
+  });
+  return listData;
+}
+
+export const getWorksDetail = async(
+  contentId:string,
+  queries?:MicroCMSQueries
+)=>{
+  const singleData = await client.getListDetail<Work>({
+  endpoint: "works",
     contentId,
     queries,
   });
