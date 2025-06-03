@@ -9,12 +9,14 @@
    --tn-color-primary-hover: #0c6cda;
    --tn-color-theme: #E5EFFC;
    --tn-color-gray: #F9F9F9;
+   --tn-color-gray-medium: #EEEEEE;
    --tn-color-white: #fff;
 
    --tn-bg-primary: var(--tn-color-primary);
    --tn-bg-primary-hover: var(--tn-color-primary-hover);
    --tn-bg-theme: var(--tn-color-theme);
    --tn-bg-gray: var(--tn-color-gray);
+   --tn-bg-gray-medium: var(--tn-color-gray-medium);
 
    --tn-btn-primary: var(--tn-color-primary);
    --tn-btn-white: var(--tn-color-white);

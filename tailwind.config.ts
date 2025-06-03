@@ -14,6 +14,7 @@ const config: Config = {
         "primary-hover": "var(--tn-color-primary-hover)",
         theme: "var(--tn-color-theme)",
         gray: "var(--tn-color-gray)",
+        "gray-medium": "var(--tn-color-gray-medium)",
         white: "var(--tn-color-white)",
       },
       backgroundColor: {
@@ -21,6 +22,7 @@ const config: Config = {
         "primary-hover": "var(--tn-bg-primary-hover)",
         theme: "var(--tn-bg-theme)",
         gray: "var(--tn-bg-gray)",
+        "gray-medium": "var(--tn-bg-gray-medium)",
       },
       borderColor: {
         primary: "var(--tn-border-primary)",
