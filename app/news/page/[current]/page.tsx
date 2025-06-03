@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getNewsList } from "@/libs/microcms";
+import { getNewsList, getCategoryList } from "@/libs/microcms";
 
 import { NEWS_LIST_LIMIT } from "@/constants";
 
@@ -10,24 +10,30 @@ import Section from "@/components/Section";
 import NewsList from "@/components/NewsList";
 import Pagination from "@/components/Pagination";
 
+import CategoryFilter from "@/components/CategoryFilter/page";
+
 type Props = {
   params: {
-    current: string
-  }
-}
+    id: string;
+    current: string;
+  };
+};
 
-export default async function NewsPageId({params}:Props) {
+export default async function NewsPageId({ params }: Props) {
+  const id = params.id;
   const current = parseInt(params.current as string, 10);
 
   if (Number.isNaN(current) || current < 1) {
     notFound();
   }
 
-  const {contents:news, totalCount} = await getNewsList({
-    limit:  NEWS_LIST_LIMIT,
-    offset:  NEWS_LIST_LIMIT * (current - 1),
+  const { contents: news, totalCount } = await getNewsList({
+    limit: NEWS_LIST_LIMIT,
+    offset: NEWS_LIST_LIMIT * (current - 1),
   });
-
+  const { contents: categories } = await getCategoryList({
+    filters: `contents[contains]news`, //APIの数が足らないためselectで抽出
+  });
   return (
     <main>
       <Hero
@@ -41,8 +47,18 @@ export default async function NewsPageId({params}:Props) {
             subTitle="News"
             horizontal="center"
           />
-          <NewsList news={news}/>
-          <Pagination totalCount={totalCount} prepage={NEWS_LIST_LIMIT} basePath="news" current={current}/>
+          <CategoryFilter
+            categories={categories}
+            basePath="news"
+            currentId={id}
+          />
+          <NewsList news={news} />
+          <Pagination
+            totalCount={totalCount}
+            prepage={NEWS_LIST_LIMIT}
+            basePath={`news`}
+            current={current}
+          />
         </Inner>
       </Section>
     </main>
