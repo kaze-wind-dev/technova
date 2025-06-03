@@ -1,5 +1,5 @@
 // import Image from "next/image";
-import { getNewsList } from "@/libs/microcms";
+import { getNewsList, getCategoryList } from "@/libs/microcms";
 
 import { NEWS_LIST_LIMIT } from "@/constants";
 
@@ -9,11 +9,14 @@ import Inner from "@/components/Inner";
 import Section from "@/components/Section";
 import NewsList from "@/components/NewsList";
 import Pagination from "@/components/Pagination";
-
+import CategoryFilter from "@/components/CategoryFilter/page";
 
 export default async function NewsListPage() {
-  const {contents:news, totalCount} = await getNewsList({
-    limit:  NEWS_LIST_LIMIT,
+  const { contents: news, totalCount } = await getNewsList({
+    limit: NEWS_LIST_LIMIT,
+  });
+  const { contents: categories } = await getCategoryList({
+    filters: `contents[contains]news`, //APIの数が足らないためselectの値で分離・抽出
   });
   return (
     <main>
@@ -28,8 +31,13 @@ export default async function NewsListPage() {
             subTitle="News"
             horizontal="center"
           />
-          <NewsList news={news}/>
-          <Pagination totalCount={totalCount} prepage={NEWS_LIST_LIMIT} basePath="news"/>
+          <CategoryFilter categories={categories} basePath="news" />
+          <NewsList news={news} />
+          <Pagination
+            totalCount={totalCount}
+            prepage={NEWS_LIST_LIMIT}
+            basePath="news"
+          />
         </Inner>
       </Section>
     </main>
