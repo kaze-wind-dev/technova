@@ -10,7 +10,7 @@ import Section from "@/components/Section";
 import NewsList from "@/components/NewsList";
 import Pagination from "@/components/Pagination";
 
-import CategoryFilter from "@/components/CategoryFilter/page";
+import CategoryFilter from "@/components/CategoryFilter";
 
 type Props = {
   params: {
@@ -48,7 +48,7 @@ export default async function NewsListPage({ params }: Props) {
           <NewsList news={news} />
           <Pagination
             totalCount={totalCount}
-            prepage={NEWS_LIST_LIMIT}
+            perpage={NEWS_LIST_LIMIT}
             basePath={`news/category/${id}`}
           />
         </Inner>

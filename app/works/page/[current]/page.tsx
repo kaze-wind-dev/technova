@@ -9,7 +9,7 @@ import Inner from "@/components/Inner";
 import Section from "@/components/Section";
 import WorksList from "@/components/WorksList";
 import Pagination from "@/components/Pagination";
-import CategoryFilter from "@/components/CategoryFilter/page";
+import CategoryFilter from "@/components/CategoryFilter";
 
 type Props = {
   params: {
@@ -49,7 +49,7 @@ export default async function WorksPageId({params}:Props) {
           />
           <CategoryFilter categories={categories} basePath="works" />
           <WorksList works={works}/>
-          <Pagination totalCount={totalCount} prepage={WORKS_LIST_LIMIT} basePath="Works" current={current}/>
+          <Pagination totalCount={totalCount} perpage={WORKS_LIST_LIMIT} basePath="Works" current={current}/>
         </Inner>
       </Section>
     </main>

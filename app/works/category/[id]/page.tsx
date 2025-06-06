@@ -10,7 +10,8 @@ import Section from "@/components/Section";
 import CtaSection from "@/components/CtaSection";
 import WorksList from "@/components/WorksList";
 import Pagination from "@/components/Pagination";
-import CategoryFilter from "@/components/CategoryFilter/page";
+import CategoryFilter from "@/components/CategoryFilter";
+
 
 type Props = {
   params: {
@@ -44,7 +45,7 @@ export default async function WorksListPage({ params }: Props) {
             currentId={id}
            />
           <WorksList works={works}/>
-          <Pagination totalCount={totalCount} prepage={WORKS_LIST_LIMIT} basePath={`works/category/${id}`}/>
+          <Pagination totalCount={totalCount} perpage={WORKS_LIST_LIMIT} basePath={`works/category/${id}`}/>
         </Inner>
       </Section>
       <CtaSection
