@@ -9,7 +9,8 @@ import Inner from "@/components/Inner";
 import Section from "@/components/Section";
 import NewsList from "@/components/NewsList";
 import Pagination from "@/components/Pagination";
-import CategoryFilter from "@/components/CategoryFilter/page";
+import CategoryFilter from "@/components/CategoryFilter";
+
 
 export default async function NewsListPage() {
   const { contents: news, totalCount } = await getNewsList({
@@ -35,7 +36,7 @@ export default async function NewsListPage() {
           <NewsList news={news} />
           <Pagination
             totalCount={totalCount}
-            prepage={NEWS_LIST_LIMIT}
+            perpage={NEWS_LIST_LIMIT}
             basePath="news"
           />
         </Inner>
