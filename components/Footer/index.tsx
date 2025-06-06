@@ -80,6 +80,9 @@ const Footer = () => {
               <li className="w-32 md:w-auto">
                 <Link href="/recruit">採用情報</Link>
               </li>
+              <li className="w-32 md:w-auto">
+                <Link href="/news">お知らせ</Link>
+              </li>
             </ul>
           </nav>
           <div className="flex flex-col gap-x-4 lg:gap-x-6 gap-y-4 mt-8 md:flex-row ">
