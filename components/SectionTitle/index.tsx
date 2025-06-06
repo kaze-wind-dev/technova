@@ -19,14 +19,14 @@ const SectionTitle = ({
     text = "text-right";
   }
   return (
-    <h2
+    <hgroup
       className={`flex flex-col ${items} ${text} font-bold gap-2 md:gap-3 text-[20px] md:text-[22px] lg:text-[24px] mb-10 md:mb-12 lg:mb-14`}
     >
-      <span className="font-sub text-primary tracking-normal leading-tight text-[2.5em] md:text-[3em]">
+      <h2 className="font-sub text-primary tracking-normal leading-tight text-[2.5em] md:text-[3em]">
         {subTitle}
-      </span>
-      <span className="tracking-widest leading-normal">{mainTitle}</span>
-    </h2>
+      </h2>
+      <p className="tracking-widest leading-normal">{mainTitle}</p>
+    </hgroup>
   );
 };
 
