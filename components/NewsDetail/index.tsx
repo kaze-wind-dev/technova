@@ -17,7 +17,7 @@ const NewsDetail = ({ data }: Props) => {
           <div className="flex flex-col items-start  gap-2">
             <Category
             name={data.category.name}
-              href="/"
+              href={`/news/category/${data.category.id}`}
             />
             <h1 className="text-[1.5rem] md:text-[2rem] lg:text-[3rem] font-bold tracking-wider leading-relaxed">
               {data.title}
