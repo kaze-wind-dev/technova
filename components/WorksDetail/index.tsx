@@ -15,9 +15,9 @@ const WorksDetail = ({ data }: Props) => {
       <Inner>
         <header className="mb-10 md:mb-12 lg:mb-16">
           <div className="flex flex-col items-start  gap-2">
-            <Category
+        <Category
             name={data.category.name}
-              href="/"
+              href={`/works/category/${data.category.id}`}
             />
             <h1 className="text-[1.5rem] md:text-[2rem] lg:text-[3rem] font-bold tracking-wider leading-relaxed">
               {data.title}
