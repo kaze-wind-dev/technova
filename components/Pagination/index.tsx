@@ -3,16 +3,16 @@ import Link from "next/link";
 type Props = {
   totalCount: number;
   basePath?: string;
-  prepage?: number;
+  perpage?: number;
   current?: number;
 };
 
 const Pagination = ({ totalCount,
      basePath,
-      prepage = 10 ,
+      perpage = 10 ,
        current=1}: Props) => {
   const pages = Array.from(
-    { length: Math.ceil(totalCount / prepage) },
+    { length: Math.ceil(totalCount / perpage) },
     (_, i) => i + 1
   );
 
