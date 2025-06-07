@@ -40,6 +40,7 @@ const WorksDetail = ({ data }: Props) => {
             loading="lazy"
           />
         )}
+        {/* eslint-disable-next-line react/jsx-key */}
         <div
           className={styles.detailBody}
           dangerouslySetInnerHTML={{ __html: data.body }}
@@ -51,7 +52,7 @@ const WorksDetail = ({ data }: Props) => {
                 <div className="aspect-[4/3]" key={`${image.url}-${index}`}>
                   <Image
                     src={image.url}
-                    alt={`サムネイル画像：${data.title}`}
+                    alt={`サムネイル画像：${image.alt && data.title}`}
                     width={image.width}
                     height={image.height}
                     loading="lazy"
