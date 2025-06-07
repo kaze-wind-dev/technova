@@ -46,7 +46,8 @@ const WorksDetail = ({ data }: Props) => {
         />
         {data.images && (
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
-            {data.images.map((image,index) => (
+            {data.images.map((image,index) => {
+              return(
                 <div className="aspect-[4/3]" key={`${image.url}-${index}`}>
                   <Image
                     src={image.url}
@@ -57,7 +58,7 @@ const WorksDetail = ({ data }: Props) => {
                     className="w-full h-full object-cover object-center"
                   />
                 </div>
-              )
+              )}
             )}
           </div>
         )}
