@@ -48,7 +48,7 @@ const WorksDetail = ({ data }: Props) => {
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
             {data.images.map((image) => {
               return (
-                <div className="aspect-[4/3]">
+                <div className="aspect-[4/3]" key={image.url}>
                   <Image
                     src={image.url}
                     alt={`サムネイル画像：${data.title}`}
