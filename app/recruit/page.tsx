@@ -1,13 +1,16 @@
-import Image from "next/image";
-// import { companyData } from "@/libs/utiles";
-
+// import Image from "next/image";
+import { RECRUIT_URL } from "@/constants";
+import { recruitData,processData } from "@/libs/utiles";
 import Hero from "@/components/Hero";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import SectionTitle from "@/components/SectionTitle";
 import Inner from "@/components/Inner";
 import Section from "@/components/Section";
-
+import CtaSection from "@/components/CtaSection";
+import LinkButton from "@/components/LinkButton";
 import CultureCard from "@/components/CultureCard";
+import RecruitItems from "@/components/RecruitItems";
+import ProcessList from "@/components/ProcessList";
 
 export default function RecruitPage() {
   return (
@@ -16,13 +19,13 @@ export default function RecruitPage() {
         pageTitle="採用情報"
         pageDesc="「テクノロジーで課題を解決する」その力を、私たちと一緒に。"
       />
-      <Breadcrumbs name="採用情報" path="/recruit/" />
+      <Breadcrumbs name="採用情報" slug="recruit" />
       <Section>
         <Inner>
           <div className="flex flex-wrap gap-y-8 items-center justify-center lg:items-start lg:justify-between ">
             <div className="md:w-full lg:w-[45%]">
               <SectionTitle
-                mainTitle="TecgBivaで働く魅力"
+                mainTitle="TechNovaで働く魅力"
                 subTitle="Culture"
                 horizontal="left"
               />
@@ -73,174 +76,37 @@ export default function RecruitPage() {
             subTitle="Position"
             horizontal="center"
           />
-          <div>
-            <article className="flex items-center justify-center flex-wrap md:justify-between gap-y-8 lg:flex-row-reverse mb-12 lg:mb-16">
-              <div className="w-full md:w-1/2">
-                <div className="mb-3 md:mb-6 lg:mb-8 pl-5 lg:pl-6 relative before:content-[''] before:w-[6px] lg:before:w-[8px] before:h-full before:rounded-full before:absolute before:top-0 before:left-0 before:bg-primary">
-                  <h3 className="font-bold text-[1.5rem] md:text-[1.75rem] lg:text-[2rem] leading-normal tracking-widest">
-                    フロントエンドエンジニア
-                  </h3>
-                </div>
-                <table className="w-full">
-                  <tbody>
-                    <tr className="border-b border-solid border-gray">
-                      <th className="font-bold leading-loose tracking-wider w-[100px] text-left py-[1.25em] ">
-                        業務内容
-                      </th>
-                      <td className="font-bold leading-loose tracking-wider text-left pl-[1.25em] py-[1.25em]">
-                        Next.js・TypeScriptを用いたWebアプリケーションの開発
-                        <br />
-                        UIコンポーネント設計、CMS連携、パフォーマンス最適化など
-                      </td>
-                    </tr>
-                    <tr className="border-b border-solid border-gray">
-                      <th className="font-bold leading-loose tracking-wider w-[100px] text-left py-[1.25em] ">
-                        歓迎スキル
-                      </th>
-                      <td className="font-bold leading-loose tracking-wider text-left pl-[1.25em] py-[1.25em]">
-                        React／Tailwind CSS／microCMS経験
-                        <br />
-                        UI/UXへの関心と提案力
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <figure className="w-full md:w-[45%] aspect-[8/5] bg-theme">
-                {/* <Image
-                 src=""
-            alt=""
-            width={} 
-            height={}
-                /> */}
-              </figure>
-            </article>
-            <article className="flex items-center justify-center flex-wrap md:justify-between gap-y-8 mb-12 lg:mb-16">
-              <div className="w-full md:w-1/2">
-                <div className="mb-3 md:mb-6 lg:mb-8 pl-5 lg:pl-6 relative before:content-[''] before:w-[6px] lg:before:w-[8px] before:h-full before:rounded-full before:absolute before:top-0 before:left-0 before:bg-primary">
-                  <h3 className="font-bold text-[1.5rem] md:text-[1.75rem] lg:text-[2rem] leading-normal tracking-widest">
-                    バックエンドエンジニア
-                  </h3>
-                </div>
-                <table className="w-full">
-                  <tbody>
-                    <tr className="border-b border-solid border-gray">
-                      <th className="font-bold leading-loose tracking-wider w-[100px] text-left py-[1.25em] ">
-                        業務内容
-                      </th>
-                      <td className="font-bold leading-loose tracking-wider text-left pl-[1.25em] py-[1.25em]">
-                        Node.js／Laravelなどを用いたAPI・サーバーサイド設計
-                        <br />
-                        データベース設計、インフラ連携（AWS, Firebase）
-                      </td>
-                    </tr>
-                    <tr className="border-b border-solid border-gray">
-                      <th className="font-bold leading-loose tracking-wider w-[100px] text-left py-[1.25em] ">
-                        歓迎スキル
-                      </th>
-                      <td className="font-bold leading-loose tracking-wider text-left pl-[1.25em] py-[1.25em]">
-                        REST API設計経験／MySQL or Firestore経験
-                        <br />
-                        セキュリティやパフォーマンスに関する知見
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <figure className="w-full md:w-[45%] aspect-[8/5] bg-theme">
-                {/* <Image
-                 src=""
-            alt=""
-            width={} 
-            height={}
-                /> */}
-              </figure>
-            </article>
-            <article className="flex items-center justify-center flex-wrap gap-y-8 lg:flex-row-reverse md:justify-between mb-12 lg:mb-16">
-              <div className="w-full md:w-1/2">
-                <div className="mb-3 md:mb-6 lg:mb-8 pl-5 lg:pl-6 relative before:content-[''] before:w-[6px] lg:before:w-[8px] before:h-full before:rounded-full before:absolute before:top-0 before:left-0 before:bg-primary">
-                  <h3 className="font-bold text-[1.5rem] md:text-[1.75rem] lg:text-[2rem] leading-normal tracking-widest">
-                    UI/UXデザイナー
-                  </h3>
-                </div>
-                <table className="w-full">
-                  <tbody>
-                    <tr className="border-b border-solid border-gray">
-                      <th className="font-bold leading-loose tracking-wider w-[100px] text-left py-[1.25em] ">
-                        業務内容
-                      </th>
-                      <td className="font-bold leading-loose tracking-wider text-left pl-[1.25em] py-[1.25em]">
-                        Figmaを使用したWeb UI設計・プロトタイピング
-                        <br />
-                        エンジニアと連携した開発プロセス設計
-                      </td>
-                    </tr>
-                    <tr className="border-b border-solid border-gray">
-                      <th className="font-bold leading-loose tracking-wider w-[100px] text-left py-[1.25em] ">
-                        歓迎スキル
-                      </th>
-                      <td className="font-bold leading-loose tracking-wider text-left pl-[1.25em] py-[1.25em]">
-                        ユーザーリサーチ／アクセシビリティ設計
-                        <br />
-                        Atomic Designの理解
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <figure className="w-full md:w-[45%] aspect-[8/5] bg-theme">
-                {/* <Image
-                 src=""
-            alt=""
-            width={} 
-            height={}
-                /> */}
-              </figure>
-            </article>
-            <article className="flex items-center justify-center flex-wrap md:justify-between gap-y-8 ">
-              <div className="w-full md:w-1/2">
-                <div className="mb-3 md:mb-6 lg:mb-8 pl-5 lg:pl-6 relative before:content-[''] before:w-[6px] lg:before:w-[8px] before:h-full before:rounded-full before:absolute before:top-0 before:left-0 before:bg-primary">
-                  <h3 className="font-bold text-[1.5rem] md:text-[1.75rem] lg:text-[2rem] leading-normal tracking-widest">
-                    プロジェクトマネージャー（PM）
-                  </h3>
-                </div>
-                <table className="w-full">
-                  <tbody>
-                    <tr className="border-b border-solid border-gray">
-                      <th className="font-bold leading-loose tracking-wider w-[100px] text-left py-[1.25em] ">
-                        業務内容
-                      </th>
-                      <td className="font-bold leading-loose tracking-wider text-left pl-[1.25em] py-[1.25em]">
-                        プロジェクトの要件定義〜進行管理
-                        <br />
-                        顧客対応、タスク管理、品質・進行のコントロール
-                      </td>
-                    </tr>
-                    <tr className="border-b border-solid border-gray">
-                      <th className="font-bold leading-loose tracking-wider w-[100px] text-left py-[1.25em] ">
-                        歓迎スキル
-                      </th>
-                      <td className="font-bold leading-loose tracking-wider text-left pl-[1.25em] py-[1.25em]">
-                        Web開発の基礎知識／チーム開発経験
-                        <br />
-                        Notion、Slack、GitHub などの業務ツール活用力
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <figure className="w-full md:w-[45%] aspect-[8/5] bg-theme">
-                {/* <Image
-                 src=""
-            alt=""
-            width={} 
-            height={}
-                /> */}
-              </figure>
-            </article>
-          </div>
+          <RecruitItems recruitInfo={recruitData} />
         </Inner>
       </Section>
+      <Section>
+        <Inner>
+          <SectionTitle
+            mainTitle="選考フロー"
+            subTitle="Process"
+            horizontal="center"
+          />
+          <p className="leading-[2.5] tracing-wider text-center">
+            TechNovaでは、応募者の皆さまとフラットに対話し、スキルや価値観を丁寧に確認する選考を行っています。
+          </p>
+          <p className="leading-[2.5] tracing-wider text-center mb-8 lg:mb-10">
+            以下のようなステップで進めていきますので、ご不明点があればお気軽にご相談ください。
+          </p>
+          <ProcessList process={processData}/>
+        </Inner>
+      </Section>
+       <CtaSection
+        title={`私たちの考えや事業に興味を持ってくださった方は、\nぜひお気軽にご応募ください。\nまずはカジュアルな面談からでも構いません。\nあなたのご経験や想いを、私たちに聞かせてください。`}
+        btn={
+          <LinkButton
+          href={RECRUIT_URL}
+          addClass="bg-primary text-white font-bold hover:bg-primary-hover btn-window-white mx-auto mt-8 mg:mt-9 lg:mt-10 text-[1.125rem] md:text-[1.25rem] lg:text-[1.5rem]"
+          blank={true}
+        >
+          <span>ご応募はこちら</span>
+        </LinkButton>
+        }
+      />
     </main>
   );
 }

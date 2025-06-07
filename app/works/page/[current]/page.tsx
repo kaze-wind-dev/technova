@@ -10,46 +10,54 @@ import Section from "@/components/Section";
 import WorksList from "@/components/WorksList";
 import Pagination from "@/components/Pagination";
 import CategoryFilter from "@/components/CategoryFilter";
+import { FORM_URL } from "@/constants";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import LinkButton from "@/components/LinkButton";
 
 type Props = {
   params: {
-    id: string;
-    current: string
-  }
-}
+    current: string;
+  };
+};
 
-export default async function WorksPageId({params}:Props) {
-  const id = params.id;
+export default async function WorksPageId({ params }: Props) {
+  console.log(params);
   const current = parseInt(params.current as string, 10);
 
   if (Number.isNaN(current) || current < 1) {
     notFound();
   }
 
-  const {contents:works, totalCount} = await getWorksList({
-    limit:  WORKS_LIST_LIMIT,
-    offset:  WORKS_LIST_LIMIT * (current - 1),
+  const { contents: works, totalCount } = await getWorksList({
+    limit: WORKS_LIST_LIMIT,
+    offset: WORKS_LIST_LIMIT * (current - 1),
   });
   const { contents: categories } = await getCategoryList({
     filters: `contents[contains]works`, //APIの数が足らないためselectの値で分離・抽出
   });
-  
+
   return (
     <main>
       <Hero
-       pageTitle="事例紹介"
+        pageTitle="事例紹介"
         pageDesc={`私たちがこれまでに手がけたプロジェクトの一部をご紹介します。`}
       />
+      <Breadcrumbs name="事例紹介" slug="works" />
       <Section>
         <Inner>
           <SectionTitle
-          mainTitle="事例紹介"
+            mainTitle="事例紹介"
             subTitle="Works"
             horizontal="center"
           />
           <CategoryFilter categories={categories} basePath="works" />
-          <WorksList works={works}/>
-          <Pagination totalCount={totalCount} perpage={WORKS_LIST_LIMIT} basePath="Works" current={current}/>
+          <WorksList works={works} />
+          <Pagination
+            totalCount={totalCount}
+            perpage={WORKS_LIST_LIMIT}
+            basePath="works"
+            current={current}
+          />
         </Inner>
       </Section>
     </main>

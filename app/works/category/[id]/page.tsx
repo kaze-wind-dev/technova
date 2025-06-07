@@ -1,7 +1,6 @@
-import { getWorksList,getCategoryList } from "@/libs/microcms";
+import { getWorksList, getCategoryList } from "@/libs/microcms";
 
 import { WORKS_LIST_LIMIT } from "@/constants";
-
 
 import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
@@ -11,7 +10,9 @@ import CtaSection from "@/components/CtaSection";
 import WorksList from "@/components/WorksList";
 import Pagination from "@/components/Pagination";
 import CategoryFilter from "@/components/CategoryFilter";
-
+import { FORM_URL } from "@/constants";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import LinkButton from "@/components/LinkButton";
 
 type Props = {
   params: {
@@ -21,19 +22,24 @@ type Props = {
 
 export default async function WorksListPage({ params }: Props) {
   const id = params.id;
-  const { contents:works, totalCount } = await getWorksList({
-    limit:  WORKS_LIST_LIMIT,
+  const { contents: works, totalCount } = await getWorksList({
+    limit: WORKS_LIST_LIMIT,
     filters: `category[equals]${id}`,
   });
   const { contents: categories } = await getCategoryList({
     filters: `contents[contains]works`, //APIの数が足らないためselectで抽出
   });
+  const currentCategory = categories.find(
+    (category) => category.id === params.id
+  );
+
   return (
     <main>
-     <Hero
+      <Hero
         pageTitle="事例紹介"
         pageDesc={`私たちがこれまでに手がけたプロジェクトの一部をご紹介します。`}
       />
+      <Breadcrumbs name="事例紹介" slug="works" category={currentCategory} />
       <Section>
         <Inner>
           <SectionTitle
@@ -41,16 +47,30 @@ export default async function WorksListPage({ params }: Props) {
             subTitle="Works"
             horizontal="center"
           />
-          <CategoryFilter categories={categories} basePath="works"
+          <CategoryFilter
+            categories={categories}
+            basePath="works"
             currentId={id}
-           />
-          <WorksList works={works}/>
-          <Pagination totalCount={totalCount} perpage={WORKS_LIST_LIMIT} basePath={`works/category/${id}`}/>
+          />
+          <WorksList works={works} />
+          <Pagination
+            totalCount={totalCount}
+            perpage={WORKS_LIST_LIMIT}
+            basePath={`works/category/${id}`}
+          />
         </Inner>
       </Section>
       <CtaSection
         title={`「このようなサイトを作ってほしい」\n「自社にも導入したい」と思ったら、\nぜひお気軽にお問い合わせください。`}
-        btnText="お問い合わせはこちらから"
+        btn={
+          <LinkButton
+            href={FORM_URL}
+            addClass="bg-primary text-white font-bold hover:bg-primary-hover btn-window-white mx-auto mt-8 mg:mt-9 lg:mt-10 text-[1.125rem] md:text-[1.25rem] lg:text-[1.5rem]"
+            blank={true}
+          >
+            <span>お問い合わせはこちら</span>
+          </LinkButton>
+        }
       />
     </main>
   );

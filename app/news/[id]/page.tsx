@@ -1,6 +1,7 @@
 import { getNewsDetail } from "@/libs/microcms";
 import LinkButton from "@/components/LinkButton";
 import NewsDetail from "@/components/NewsDetail";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 type Props = {
   params: {
@@ -13,6 +14,8 @@ export default async function NewsDetailPage({ params }: Props) {
 
   return (
     <main>
+            <Breadcrumbs name="お知らせ" slug="news" category={data.category} detail={data}/>
+      
       <div className="py-16 md:py-20 lg:py-24">
         <NewsDetail data={data} />
         <LinkButton

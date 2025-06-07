@@ -9,6 +9,7 @@ import Inner from "@/components/Inner";
 import Section from "@/components/Section";
 import NewsList from "@/components/NewsList";
 import Pagination from "@/components/Pagination";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 import CategoryFilter from "@/components/CategoryFilter";
 
@@ -42,6 +43,8 @@ export default async function NewsPageId({ params }: Props) {
         pageTitle="お知らせ"
         pageDesc={`TechNovaからのお知らせや最新情報をご案内します。サービス情報、実績公開、採用に関する情報などはこちらからご確認ください。`}
       />
+      <Breadcrumbs name="お知らせ" slug="news" />
+
       <Section>
         <Inner>
           <SectionTitle

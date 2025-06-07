@@ -14,9 +14,10 @@ const CategoryFilter = ({
   currentId,
 }: Props) => {
   return (
-    <ul className="flex items-center justify-start gap-3 md:gap-4 lg:gap-5 mb-10 md:mb-12 lg:mb-14">
+    <ul className="flex items-center justify-start flex-wrap gap-3 md:gap-4 lg:gap-5 mb-10 md:mb-12 lg:mb-14">
       {categories.map((category) =>
         currentId === category.id ? (
+          
           <li key={category.id}>
           <span
             className="block w-fit py-[1em] px-[2em] rounded-full bg-primary text-white font-bold"

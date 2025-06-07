@@ -31,7 +31,8 @@ export type News = {
   body: string;
   thumbnail?: MicroCMSImage;
   category:{
-    name : string
+    id : string;
+    name : string;
   };
 } & MicroCMSListContent;
 
@@ -78,7 +79,8 @@ export type Work = {
   thumbnail?: MicroCMSImage;
   images?: MicroCMSImage[];
   category:{
-    name : string
+    id : string;
+    name : string;
   };
 } & MicroCMSListContent;
 

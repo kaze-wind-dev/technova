@@ -1,7 +1,9 @@
 import Image from "next/image";
+import style from "./index.module.css";
+
 type Props = {
   pageTitle: string;
-  pageDesc: string;
+  pageDesc?: string;
   pageRoot?: boolean;
   image?: {
     src: string;
@@ -13,42 +15,51 @@ type Props = {
 const Hero = ({ pageTitle, pageDesc, pageRoot = false, image }: Props) => {
   if (pageRoot) {
     return (
-      <section className="text-white font-bold relative">
-        <div className="">
-          <div className="absolute bottom-24 left-[5%] z-20 flex flex-col gap-y-6 flex-wrap ">
-            <h1 className="text-[80px] leading-[1.25em] font-sub ">
+      <section className="text-white font-bold relative h-[600px] lg:h-[654px]">
+        <div className={style.copy}>
+          <div className="absolute bottom-[12%] lg:bottom-24 left-[5%] z-20 flex flex-col gap-y-6 flex-wrap">
+            <h1 className="text-[3.5rem] md:text-[4.25rem] lg:text-[5rem] leading-tight font-sub font-bold tracking-widest whitespace-pre-wrap ">
               {pageTitle}
             </h1>
-            <p className="text-[32px] leading-[1.5em]">{pageDesc}</p>
+            {
+              pageDesc && (
+            <p className="text-[1.25rem] md:text-[1.5rem] lg:text-[2rem] leading-normal whitespace-pre-wrap">
+              {pageDesc}
+            </p>
+              )
+            }
           </div>
-          {image && (
-            <Image
-              src={image?.src}
-              alt={image?.alt}
-              width={image?.width}
-              height={image?.height}
-              className="w-full h-full object-cover object-center"
-            />
-          )}
         </div>
+        {image && (
+          <Image
+            src={image?.src}
+            alt={image?.alt}
+            width={image?.width}
+            height={image?.height}
+            className="w-full h-full object-cover object-center"
+          />
+        )}
       </section>
     );
   } else {
     return (
       <section>
         <div className="w-[90%] mx-auto py-16 md:py-20 lg:py-24 font-bold">
-          <h1 className="text-6xl relative pl-[0.75em]"><span className="w-[0.5em] h-[0.5em] rounded-md bg-primary rotate-45 block absolute top-1/2 left-0 -translate-y-2/4"></span>{pageTitle}</h1>
-          <p className="mt-6 leading-loose">{pageDesc}</p>
+          <h1 className="text-[2rem] sm:[2.25rem] md:text-[2.5rem] lg:text-[3rem] relative pl-[0.75em] font-bold tracking-wider">
+            <span className="w-[0.5em] h-[0.5em] rounded-[4px] md:rounded-md bg-primary rotate-45 block absolute top-[0.75em] left-0 -translate-y-2/4"></span>
+            {pageTitle}
+          </h1>
+          <p className="mt-4 sm:mt-5 md:mt-6 lg:mt-8 leading-loose whitespace-pre-wrap">{pageDesc}</p>
         </div>
         {image && (
-            <Image
-              src={image?.src}
-              alt={image?.alt}
-              width={image?.width}
-              height={image?.height}
-              className="w-full h-full object-cover object-center"
-            />
-          )}
+          <Image
+            src={image?.src}
+            alt={image?.alt}
+            width={image?.width}
+            height={image?.height}
+            className="w-full h-full object-cover object-center"
+          />
+        )}
       </section>
     );
   }

@@ -12,7 +12,7 @@ const RecruitItems = ({ recruitInfo }: Props) => {
       {recruitInfo.map((recruit) => {
         return (
           <article
-            className="flex items-center justify-center flex-wrap md:justify-between gap-y-8 lg:odd:flex-row-reverse mb-12 lg:mb-16"
+            className="flex items-center justify-center flex-wrap md:justify-between gap-y-8 md:odd:flex-row-reverse mb-12 lg:mb-16"
             key={recruit.id}
           >
             <div className="w-full md:w-1/2">

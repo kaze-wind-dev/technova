@@ -1,0 +1,155 @@
+
+.detailBody > p {
+  line-height: 2;
+  margin-block: 1.5rem;
+}
+.detailBody h1,
+.detailBody h2,
+.detailBody h3,
+.detailBody h4,
+.detailBody h5,
+.detailBody h6 {
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  margin-top: 3.5rem;
+}
+.detailBody figure {
+  margin-bottom: 1rem;
+}
+.detailBody h1 {
+  font-size: 2.5rem;
+  
+}
+.detailBody h2 {
+  font-size: 2.25rem;
+
+}
+.detailBody h3 {
+  font-size: 2rem;
+
+}
+.detailBody h4 {
+  font-size: 1.75rem;
+}
+.detailBody h5 {
+  font-size: 1.5rem;
+  position: relative;
+  padding: 0.5rem 0;
+}
+.detailBody h5::before {
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 20%;
+  height: 3px;
+  content: "";
+}
+.detailBody h6 {
+  padding: 0.5rem 0;
+}
+.detailBody blockquote {
+  max-width: 640px;
+  margin-block: 1rem;
+  padding: 2rem 2.5rem 2rem 3.5rem;
+  position: relative;
+  z-index: 1;
+}
+/* .detailBody blockquote::before {
+  display: inline-block;
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4.58341 17.3211C3.55316 16.2274 3 15 3 13.0103C3 9.51086 5.45651 6.37366 9.03059 4.82318L9.92328 6.20079C6.58804 8.00539 5.93618 10.346 5.67564 11.822C6.21263 11.5443 6.91558 11.4466 7.60471 11.5105C9.40908 11.6778 10.8312 13.159 10.8312 15C10.8312 16.933 9.26416 18.5 7.33116 18.5C6.2581 18.5 5.23196 18.0095 4.58341 17.3211ZM14.5834 17.3211C13.5532 16.2274 13 15 13 13.0103C13 9.51086 15.4565 6.37366 19.0306 4.82318L19.9233 6.20079C16.588 8.00539 15.9362 10.346 15.6756 11.822C16.2126 11.5443 16.9156 11.4466 17.6047 11.5105C19.4091 11.6778 20.8312 13.159 20.8312 15C20.8312 16.933 19.2642 18.5 17.3312 18.5C16.2581 18.5 15.232 18.0095 14.5834 17.3211Z' fill='%2320b580'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  content: "";
+} */
+.detailBody blockquote:has(cite) {
+  padding-bottom: 1.5rem;
+}
+.detailBody blockquote p {
+  margin-top: 0;
+}
+.detailBody blockquote cite {
+  display: block;
+  font-size: 0.8rem;
+  text-align: right;
+}
+.detailBody ul {
+  list-style-type: disc;
+}
+.detailBody ol {
+  list-style-type: decimal;
+}
+.detailBody ul li, .detailBody ol li {
+  margin: 0.25rem;
+  margin-left: 2rem;
+}
+.detailBody ul ul, .detailBody ul ol, .detailBody ol ul, .detailBody ol ol {
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+}
+.detailBody .wp-block-gallery ul {
+  padding-left: 0;
+}
+.detailBody table {
+  margin-bottom: 1.25rem;
+  max-width: 100%;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.detailBody table th,
+.detailBody table td {
+  position: relative;
+  padding: 0.5rem;
+}
+.detailBody table:not(.has-border-color) :where(th, td) {
+  border: 1px solid var(--tn-color-gray);
+}
+.detailBody > dl {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.detailBody > dl dt {
+  width: 22%;
+  padding-inline: 0.5rem 0;
+  padding-block: 1rem;
+}
+.detailBody > dl dd {
+  padding-inline: 1rem 0.5rem;
+  padding-block: 1rem;
+  width: 78%;
+}
+.detailBody address > p:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+.detailBody > cite,
+.detailBody p > cite {
+  font-size: 0.8rem;
+  text-align: right;
+}
+.detailBody > code,
+.detailBody p > code {
+  border-radius: 4px;
+  font-size: 0.9rem;
+  padding: 0.25rem;
+  overflow: auto;
+}
+.detailBody > pre,
+.detailBody p > pre {
+  border-radius: 4px;
+  padding: 1.5rem;
+  overflow: auto;
+  line-height: 1.5;
+  max-height: 40vh;
+  margin-block: 1.5rem;
+}
+.detailBody iframe {
+  max-width: 100%;
+}

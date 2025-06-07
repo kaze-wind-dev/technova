@@ -9,7 +9,7 @@ import Inner from "@/components/Inner";
 import Section from "@/components/Section";
 import NewsList from "@/components/NewsList";
 import Pagination from "@/components/Pagination";
-
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import CategoryFilter from "@/components/CategoryFilter";
 
 type Props = {
@@ -27,12 +27,16 @@ export default async function NewsListPage({ params }: Props) {
   const { contents: categories } = await getCategoryList({
     filters: `contents[contains]news`, //APIの数が足らないためselectで抽出
   });
+  const currentCategory = categories.find(
+    (category) => category.id === params.id
+  );
   return (
     <main>
       <Hero
         pageTitle="お知らせ"
         pageDesc={`TechNovaからのお知らせや最新情報をご案内します。サービス情報、実績公開、採用に関する情報などはこちらからご確認ください。`}
       />
+      <Breadcrumbs name="お知らせ" slug="news" category={currentCategory} />
       <Section>
         <Inner>
           <SectionTitle

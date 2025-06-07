@@ -26,6 +26,13 @@
    --tn-border-gray: #D9D9D9;
  }
 
+a {
+  transition: .3s;
+}
+a:hover{
+  opacity: .7;
+}
+
  .btn-arrow-white>span {
    padding-right: 1.6875rem;
    display: inline-block;
@@ -88,5 +95,22 @@
    width: 1rem;
    height: 1rem;
    background: url(/icon-window-primary.svg) no-repeat center / contain;
+ }
+ .btn-window-white>span {
+   padding-right: 2rem;
+   display: inline-block;
+   position: relative;
+   z-index: 1;
+ }
+
+ .btn-window-white>span::after {
+   content: '';
+   position: absolute;
+   top: 50%;
+   right: 0;
+   translate: 0 -50%;
+   width: 1rem;
+   height: 1rem;
+   background: url(/icon-window-white.svg) no-repeat center / contain;
  }
 

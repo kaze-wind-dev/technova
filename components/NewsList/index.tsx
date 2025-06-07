@@ -8,7 +8,7 @@ type Props = {
 };
 const NewsList = ({ news }: Props) => {
   if (news.length == 0) {
-    return <p className="text-center mx-center">現在、投稿はございません。</p>;
+    return <p className="text-center mx-auto">現在、投稿はございません。</p>;
   }
   return (
     <div className="mx-auto max-w-[960px]">

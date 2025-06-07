@@ -1,6 +1,5 @@
 // import Image from "next/image";
 import { companyData } from "@/libs/utiles";
-
 import Hero from "@/components/Hero";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import SectionTitle from "@/components/SectionTitle";
@@ -14,7 +13,7 @@ export default function CompanyPage() {
         pageTitle="会社概要"
         pageDesc="TechNovaは、テクノロジーの力で社会とビジネスの未来を創るITソリューション企業です。"
       />
-      <Breadcrumbs name="会社概要" path="/company/"/>
+      <Breadcrumbs name="会社概要" slug="company"/>
       <Section>
         <Inner>
           <SectionTitle
@@ -100,6 +99,9 @@ export default function CompanyPage() {
           </table>
         </Inner>
       </Section>
+      <div className="h-[56.25vw] min-h-[200px] lg:h-[400px]">
+      <iframe className="w-full h-full object-cover" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15875.537652599105!2d139.7142617821329!3d35.64224896620565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b4046e3f71d%3A0x85ab1d92ef294edf!2z5oG15q-U5a-_6aeF!5e0!3m2!1sja!2sjp!4v1748961563843!5m2!1sja!2sjp" width="600" height="450" loading="lazy"></iframe>
+      </div>
     </main>
   );
 
