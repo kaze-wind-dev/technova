@@ -78,7 +78,7 @@ export default function SitePage() {
               <li className=" border-b border-gray hover:border-primary hover:text-primary transition w-full">
                 <Link
                   className="py-[1.25em] font-bold text-[1.125rem] sm:text-[1.25rem] md:text-[1.25rem] flex justify-between"
-                  href="/recruit"
+                  href="/site"
                 >
                   サイトマップ
                   <span className="font-sub text-[0.75em] md:hidden">
@@ -89,7 +89,7 @@ export default function SitePage() {
               <li className=" border-b border-gray hover:border-primary hover:text-primary transition w-full">
                 <Link
                   className="py-[1.25em] font-bold text-[1.125rem] sm:text-[1.25rem] md:text-[1.25rem] flex justify-between"
-                  href="/recruit"
+                  href="/privacy"
                 >
                   プライバシーポリシー
                   <span className="font-sub text-[0.75em] md:hidden">
