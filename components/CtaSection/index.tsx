@@ -14,7 +14,7 @@ const CtaSection = ({ title, btn }: Props) => {
   return (
     <Section addClass="bg-gray">
       <Inner>
-        <h2 className="text-bold leading-loose tracing-wider text-center font-bold text-[1.25rem] md:text-[1.75rem] lg:text-[2rem] whitespace-pre-wrap">
+        <h2 className="text-bold leading-loose tracing-wider text-center font-bold text-[1.125rem] md:text-[1.5rem] lg:text-[2rem] whitespace-pre-wrap">
           {title}
         </h2>
         {btn}

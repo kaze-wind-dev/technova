@@ -15,7 +15,7 @@ type Props = {
 const Hero = ({ pageTitle, pageDesc, pageRoot = false, image }: Props) => {
   if (pageRoot) {
     return (
-      <section className="text-white font-bold relative h-[600px] lg:h-[654px]">
+      <section className="text-white font-bold relative min-h-[400px] h-[64svh] md:h-[600px] lg:h-[654px]">
         <div className={style.copy}>
           <div className="absolute bottom-[12%] lg:bottom-24 left-[5%] z-20 flex flex-col gap-y-6 flex-wrap">
             <h1 className="text-[3.5rem] md:text-[4.25rem] lg:text-[5rem] leading-tight font-sub font-bold tracking-widest whitespace-pre-wrap ">
