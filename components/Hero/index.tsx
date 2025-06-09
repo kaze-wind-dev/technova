@@ -45,7 +45,7 @@ const Hero = ({ pageTitle, pageDesc, pageRoot = false, image }: Props) => {
     return (
       <section>
         <div className="w-[90%] mx-auto py-16 md:py-20 lg:py-24 font-bold">
-          <h1 className="text-[2rem] sm:[2.25rem] md:text-[2.5rem] lg:text-[3rem] relative pl-[0.75em] font-bold tracking-wider">
+          <h1 className="text-[2rem] sm:[2.25rem] md:text-[2.5rem] lg:text-[3rem] relative pl-[0.75em] font-bold tracking-wider leading-normal">
             <span className="w-[0.5em] h-[0.5em] rounded-[4px] md:rounded-md bg-primary rotate-45 block absolute top-[0.75em] left-0 -translate-y-2/4"></span>
             {pageTitle}
           </h1>
