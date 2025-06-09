@@ -1,36 +1,186 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TechNova株式会社（架空の会社） コーポレートサイト構築プロジェクト（架空のサイト）
 
-## Getting Started
+## プロジェクト概要
 
-First, run the development server:
+架空の企業「TechNova株式会社」のコーポレートサイトを企画・設計・実装。
+Next.js + microCMS によるJAMstack構成で構築し、Tailwind.cssを使用してPC/SP両対応のレスポンシブ設計を行った。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 制作目的
+このプロジェクトは、設計力・UI構築力・CMS連携などの実務的なスキルを可視化することを目的としています。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+以下の力を証明できるポートフォリオを目指して制作しました：
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Next.js + Tailwind CSS によるコンポーネント実装力
+- microCMSと連携した動的コンテンツの実装・管理の理解
+- レスポンシブ設計・UX配慮を含めた“使えるUI”の構築スキル
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## TechNova株式会社（架空）の概要や設定
+### TechNova株式会社について
+TechNova株式会社は、「テクノロジーで、次の一手を。」をミッションに掲げるITソリューション企業です。
+Web制作、クラウド構築、システム開発などを通じて、企業や社会の課題を技術の力で解決することを目的としています
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 依頼の詳細について
+#### 今回の制作依頼のワケ
+当社TechNovaは、Web制作やクラウド導入支援、業務システムの開発を通じて、企業の課題解決を行ってきました。
+事業自体は順調に成長してきましたが、これまでのコーポレートサイトはテンプレート的な内容で、自社の技術力や実績、雰囲気が伝わりづらい構成になっていたのが課題でした。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+そこで今回、次の目的をもってWebサイトの全面的なリニューアルを依頼しました：
 
-## Deploy on Vercel
+- 自社の専門性や信頼感を明確に伝えられるサイトに刷新したい
+- 採用や営業時に「会社の顔」として誇れる内容にしたい
+- 情報発信のしやすさ（CMS導入）も重視したい
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### どんな雰囲気・見せ方のサイトにしたいか
+**「信頼感」「整理された印象」「ちょっとだけ先進的」**を大切にしたいと考えています。
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- デザインは白・青・グレーなどをベースに、シンプルだけど誠実な印象
+- 「テック系らしさ」よりも、**“相談しやすい技術パートナー”**という雰囲気
+- アニメーションや装飾は控えめに、情報設計と可読性を優先
+
+#### 会社の色などの要望
+- 基本のブランドカラーは ブルー系
+- 補助カラーとして ライトグレー／アクセントに薄いブルー を使用してほしい
+- フォントは読みやすく落ち着いた印象のものがよい
+- ロゴはシンボルマーク＋テキストの組み合わせで、「信頼」「知性」をイメージ
+
+### 基本情報
+項目	内容
+会社名	TechNova株式会社（テックノヴァ）
+所在地	東京都渋谷区恵比寿1-23-45 テックノヴァビル6F
+設立	2015年4月
+代表者	代表取締役 CEO 山田 太郎
+従業員数	75名（2025年4月時点）
+資本金	1億円
+事業内容	Web制作 / クラウドインフラ / 業務システム開発 / デジタルマーケティング
+主要取引先	中堅〜大手企業、スタートアップ、自治体等
+
+###　ミッション・ビジョン
+ミッション（使命）
+「テクノロジーで、次の一手を。」
+
+ビジョン（目指す姿）
+「すべての企業の“技術パートナー”に」
+
+###　事業内容
+1. WEB制作事業
+コーポレートサイト・サービスサイトの企画・デザイン・開発
+Jamstack構成による高速・セキュアなサイト提供
+
+2. システム開発事業
+中小企業向け業務管理システムのスクラッチ開発
+
+3. クラウドソリューション事業
+AWS/Azureを用いたサーバーレス設計
+運用保守、監視、セキュリティ対策まで一括対応
+
+4. デジタルマーケティング支援
+SEO設計、Google Analyticsの活用
+Web広告運用、LP制作など
+
+### 対象クライアント層
+- 自社サイトをリニューアルしたい中堅企業
+- DX推進に悩む自治体や団体
+
+---
+
+## サイトの特徴・要件
+
+- **技術構成**: Next.js (App Router) / Tailwind CSS / microCMS
+- **レスポンシブ対応**: PC / タブレット / スマートフォン
+- **投稿管理**: 事例紹介 / お知らせ / （CMS対応）　※事業内容はAPIの制限の関係でCMSはなし
+- **ページ構成**: トップページ / 事業内容 / 実績 / 採用情報 / お問い合わせ（form） / お知らせ / 会社情報 / 404
+- **デザイン**: FigmaにてPC・SP両方のワイヤーフレーム設計
+
+---
+
+## デザイン資料
+- Figma ワイヤーフレーム: [こちら](https://www.figma.com/design/0MtRojOlNv57X8bYad5z0X/TechNova%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE?node-id=0-1&t=ua8bCipaLrvcrKcV-1)
+
+---
+
+## 使用技術
+
+| カテゴリ         | 使用技術              |
+|------------------|-----------------------|
+| フレームワーク     | Next.js 14 (App Router) |
+| スタイリング       | Tailwind CSS          |
+| CMS               | microCMS（無料プランの範囲）|
+| デザインツール     | Figma                 |
+| デプロイ          | Vercel（予定）        |
+| お問い合わせ          | Formrun（無料プランの範囲）|
+
+---
+
+## 制作期間
+5/7　～　6/9
+構成～デザイン　約27時間
+サイト構築～公開　約　時間
+
+計　約　時間
+※詳細はlogsを参照
+
+---
+
+## 担当範囲
+
+- サイト設計（構成案・ページマップ作成）
+- Figmaでの全ページワイヤーフレーム制作（PC/SP）
+- microCMS構成設計（モデル設計・API連携）
+- フロントエンド実装（React + Tailwind）
+- GitHub管理・継続的コミット
+
+---
+
+## ChatGPTを活用した範囲について
+本プロジェクトでは一部、ChatGPTを活用して以下の作業をサポートしてもらっています。：
+
+**ChatGPT に依頼したこと**
+- 架空企業「TechNova株式会社」の基本設定（社名・事業・コンセプト・依頼の理由など）
+- サイト構成の初期案やコンテンツアイデアのブレスト
+- キャッチコピーや見出し・本文の案出し、作成
+
+---
+
+## その他
+- 採用に関する応募はWantedlyに外部リンクを想定しています（仮想）
+- 「お知らせ」や「実例紹介」のカテゴリはAPIの数が足りなかったため、APIを1つとし、slugと投稿の種別の選択からでどの投稿のカテゴリかを決定するように処理しています
+
+---
+
+## ディレクトリ設計
+
+・/components　コンポーネント
+・/libs　外部ソースなどのライブラリになるもの
+・/constants　定数など
+
+・/app　pageルータのディレクトリ
+　・/app/service
+　・/app/works
+    ・/app/works/[id]
+　・/app/company
+　・/app/recruit
+　・/app/news
+    ・/app/news/[id]
+　・/app/contact
+　
+
+## 制作にあたって、参考にしたもの
+
+microCMS公式ブログ
+https://nextjs.org/docs
+
+書籍　「Next.js＋ヘッドレスCMSではじめる！ かんたんモダンWebサイト制作入門 高速で、安全で、運用しやすいサイトのつくりかた」
+https://www.shoeisha.co.jp/book/detail/9784798183664
+
+Next.js公式
+https://blog.microcms.io/
+
+Tailwind.css
+https://tailwindcss.com/
+
+tailwind チートシート
+https://nerdcave.com/tailwind-cheat-sheet
