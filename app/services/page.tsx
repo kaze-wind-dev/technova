@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Metadata } from "next";
 import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
 import Inner from "@/components/Inner";
@@ -9,12 +10,20 @@ import { servicesData } from "@/libs/utiles";
 import type { Service } from "@/libs/utiles";
 import LinkButton from "@/components/LinkButton";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-
 import { FORM_URL } from "@/constants";
+
+export const revalidate = 3600;
+
+export const metadata: Metadata = {
+  title: "事業内容",
+  description:"TechNova株式会社の事業内容をご紹介いたします。"
+
+};
 
 type Props = {
   services: Service[];
 };
+
 const ServiceContents = ({ services }: Props) => {
   if (services.length == 0) {
     return <p className="text-center mx-auto">現在、投稿はございません。</p>;
@@ -61,6 +70,7 @@ const ServiceContents = ({ services }: Props) => {
     </div>
   );
 };
+
 export default function ServicesPage() {
   return (
     <main>

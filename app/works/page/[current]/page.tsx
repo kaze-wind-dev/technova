@@ -1,8 +1,7 @@
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getWorksList, getCategoryList } from "@/libs/microcms";
-
 import { WORKS_LIST_LIMIT } from "@/constants";
-
 import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
 import Inner from "@/components/Inner";
@@ -10,16 +9,19 @@ import Section from "@/components/Section";
 import WorksList from "@/components/WorksList";
 import Pagination from "@/components/Pagination";
 import CategoryFilter from "@/components/CategoryFilter";
-import { FORM_URL } from "@/constants";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import LinkButton from "@/components/LinkButton";
+
+export const revalidate = 600;
 
 type Props = {
   params: {
     current: string;
   };
 };
-
+export const metadata: Metadata = {
+  title: "事例紹介",
+  description:"TechNova株式会社の事例紹介ページです。"
+};
 export default async function WorksPageId({ params }: Props) {
   console.log(params);
   const current = parseInt(params.current as string, 10);

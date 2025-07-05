@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import LinkButton from "@/components/LinkButton";
@@ -8,12 +9,33 @@ import ReactMarkdown from "react-markdown";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import styles from "./index.module.css";
 
+export const revalidate = 3600;
+
+
 type Props = {
   params: {
     id: string;
   };
 };
-
+export function generateMetadata({ params }: Props):Metadata {
+  const data = servicesData.find((service) => service.id == params.id);
+  return {
+    title: data?.title,
+    description: data?.description,
+    openGraph: {
+      title: data?.title,
+      description: data?.description,
+      images: [
+        {
+          url: data?.thumbnail?.url ?? "ogp.jpg",
+          width: data?.thumbnail?.width ?? 1200,
+          height: data?.thumbnail?.height ?? 630,
+          alt: data?.title ?? "TechNova株式会社 OGP画像",
+        },
+      ],
+    },
+  };
+}
 export default function ServiceDetailPage({ params }: Props) {
   const data = servicesData.find((service) => service.id == params.id);
   if (!data) {

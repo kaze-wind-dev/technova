@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Metadata } from "next";
 import { FORM_URL } from "@/constants";
 import Hero from "@/components/Hero";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -7,6 +8,14 @@ import Section from "@/components/Section";
 import SectionTitle from "@/components/SectionTitle";
 import CtaSection from "@/components/CtaSection";
 import LinkButton from "@/components/LinkButton";
+
+export const revalidate = 86400;
+
+export const metadata: Metadata = {
+  title: "サイトマップ",
+  description:"TechNova株式会社のサイトマップページです。"
+
+};
 
 export default function SitePage() {
   return (

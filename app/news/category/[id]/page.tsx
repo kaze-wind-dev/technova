@@ -31,11 +31,7 @@ export default async function NewsListPage({ params }: Props) {
     (category) => category.id === params.id
   );
   return (
-    <main>
-      <Hero
-        pageTitle="お知らせ"
-        pageDesc={`TechNovaからのお知らせや最新情報をご案内します。サービス情報、実績公開、採用に関する情報などはこちらからご確認ください。`}
-      />
+    <>
       <Breadcrumbs name="お知らせ" slug="news" category={currentCategory} />
       <Section>
         <Inner>
@@ -57,6 +53,6 @@ export default async function NewsListPage({ params }: Props) {
           />
         </Inner>
       </Section>
-    </main>
+    </>
   );
 }

@@ -16,10 +16,35 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "TechNova株式会社｜テクノロジーで、次の一手を。",
+  metadataBase: new URL("https://technova-khaki.vercel.app"),
+  title: {
+    default: "テクノロジーで、次の一手を。",
+    template: "%s | テクノロジーで、次の一手を。",
+  },
   description:
     "TechNova株式会社は、Web制作・クラウド構築・システム開発を通じて、企業の課題を解決するITソリューション企業です。",
-  robots: "noindex"
+  keywords: [
+    "TechNova株式会社",
+    "テックノヴァ",
+    "ITソリューション",
+    "Web制作",
+    "システム開発",
+    "クラウドソリューション事業",
+    "デジタルマーケティング支援",
+  ],
+  openGraph: {
+    type: "website",
+    siteName: "TechNova株式会社",
+    images: [
+      {
+        url: "ogp.jpg",
+        width: 1200,
+        height: 630,
+        alt: "TechNova株式会社 OGP画像",
+      },
+    ],
+  },
+  robots: "noindex", //公式サイトではないため、クローラー拒否
 };
 
 export default function RootLayout({
@@ -30,13 +55,13 @@ export default function RootLayout({
   return (
     <html
       lang="ja"
-      className={`${zenKakuGothicNew.variable} ${outfit.variable} ` }
+      className={`${zenKakuGothicNew.variable} ${outfit.variable} `}
     >
       <body className="tracking-wider leading-normal font-medium font-base text-sm lg:text-base">
         <div className="overflow-hidden">
-        <Header />
-        {children}
-        <Footer />
+          <Header />
+          {children}
+          <Footer />
         </div>
       </body>
     </html>

@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Inner from "@/components/Inner";
 import DateText from "@/components/DateText";
@@ -10,6 +11,7 @@ type Props = {
 };
 
 const WorksDetail = ({ data }: Props) => {
+  
   return (
     <article>
       <Inner>
@@ -40,11 +42,11 @@ const WorksDetail = ({ data }: Props) => {
             loading="lazy"
           />
         )}
-        {/* eslint-disable-next-line react/jsx-key */}
         <div
           className={styles.detailBody}
           dangerouslySetInnerHTML={{ __html: data.body }}
         />
+
         {data.images && (
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
             {data.images.map((image, index) => {
