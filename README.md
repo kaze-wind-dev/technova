@@ -1,5 +1,10 @@
 # TechNova株式会社（架空の会社） コーポレートサイト構築プロジェクト（架空のサイト）
 
+![スクリーンショット 2025-07-05 213319](https://github.com/user-attachments/assets/3982bbc4-7adf-4057-8dc0-329555c34173)
+
+## プロジェクトURL
+[こちら](https://technova-khaki.vercel.app/)からご覧ください
+
 ## プロジェクト概要
 
 架空の企業「TechNova株式会社」のコーポレートサイトを企画・設計・実装。
@@ -15,6 +20,47 @@ Next.js + microCMS によるJAMstack構成で構築し、Tailwind.cssを使用�
 - Next.js + Tailwind CSS によるコンポーネント実装力
 - microCMSと連携した動的コンテンツの実装・管理の理解
 - レスポンシブ設計・UX配慮を含めた“使えるUI”の構築スキル
+
+---
+
+## 導入手順
+
+1. **リポジトリのクローン**
+   ```bash
+   git clone https://github.com/kaze-wind-dev/technova.git
+   cd technova
+   ```
+
+2. **依存パッケージのインストール**
+   ```bash
+   npm install
+   ```
+   または
+   ```bash
+   yarn install
+   ```
+
+3. **開発用サーバーの起動**
+   ```bash
+   npm run dev
+   ```
+   または
+   ```bash
+   yarn dev
+   ```
+
+4. **ブラウザでアクセス**
+   ```
+   http://localhost:3000
+   ```
+   （※ポート番号はご利用の開発環境やフレームワークによって異なる場合があります）
+
+---
+
+### その他
+
+- Node.jsのバージョン: `xx.x.x`（推奨バージョンを記載）
+- 必要な環境変数や設定ファイルがあれば、その説明も追記してください。
 
 ---
 
@@ -120,7 +166,7 @@ Web広告運用、LP制作など
 構成～デザイン　約27時間
 サイト構築～公開　約44.5時間
 
-計　約　時間
+計　約　80　時間
 ※詳細はlogsを参照
 
 ---
@@ -184,3 +230,5 @@ https://tailwindcss.com/
 
 tailwind チートシート
 https://nerdcave.com/tailwind-cheat-sheet
+
+
