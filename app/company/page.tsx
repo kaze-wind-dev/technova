@@ -6,6 +6,8 @@ import SectionTitle from "@/components/SectionTitle";
 import Inner from "@/components/Inner";
 import Section from "@/components/Section";
 
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "会社概要",
   description:"ビジョンやミッション、会社概要についてご紹介します。"

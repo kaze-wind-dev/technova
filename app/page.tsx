@@ -13,6 +13,8 @@ import ServiceList from "@/components/ServiceList/page";
 import NewsList from "@/components/NewsList";
 import TopWorksList from "@/components/TopWorksList";
 
+export const revalidate = 3600;
+
 export default async function Home() {
   const { contents: news } = await getNewsList({
     limit: 5,
