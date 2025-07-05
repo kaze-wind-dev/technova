@@ -13,10 +13,11 @@ import CultureCard from "@/components/CultureCard";
 import RecruitItems from "@/components/RecruitItems";
 import ProcessList from "@/components/ProcessList";
 
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "採用情報",
   description:"TechNova株式会社の採用に関する情報を掲載しています。"
-
 };
 
 export default function RecruitPage() {

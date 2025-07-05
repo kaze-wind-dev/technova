@@ -9,9 +9,9 @@ import Section from "@/components/Section";
 import WorksList from "@/components/WorksList";
 import Pagination from "@/components/Pagination";
 import CategoryFilter from "@/components/CategoryFilter";
-import { FORM_URL } from "@/constants";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import LinkButton from "@/components/LinkButton";
+
+export const revalidate = 600;
 
 type Props = {
   params: {

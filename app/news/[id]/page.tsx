@@ -32,16 +32,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function NewsDetailPage({ params }: Props) {
   const data = await getNewsDetail(params.id);
-
   return (
-    <main>
+    <>
       <Breadcrumbs
         name="お知らせ"
         slug="news"
         category={data.category}
         detail={data}
       />
-
       <div className="py-16 md:py-20 lg:py-24">
         <NewsDetail data={data} />
         <LinkButton
@@ -51,6 +49,6 @@ export default async function NewsDetailPage({ params }: Props) {
           一覧に戻る
         </LinkButton>
       </div>
-    </main>
+    </>
   );
 }

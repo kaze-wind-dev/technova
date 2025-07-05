@@ -1,10 +1,8 @@
-import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getNewsList, getCategoryList } from "@/libs/microcms";
 
 import { NEWS_LIST_LIMIT } from "@/constants";
 
-import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
 import Inner from "@/components/Inner";
 import Section from "@/components/Section";
@@ -19,11 +17,7 @@ type Props = {
     current: string;
   };
 };
-export const metadata: Metadata = {
-  title: "お知らせ",
-  description:"TechNovaからのお知らせや最新情報をご案内します。"
 
-};
 export default async function NewsPageId({ params }: Props) {
   const current = parseInt(params.current as string, 10);
   const id = params.id;
@@ -40,17 +34,13 @@ export default async function NewsPageId({ params }: Props) {
   const { contents: categories } = await getCategoryList({
     filters: `contents[contains]news`, //APIの数が足らないためselectで抽出
   });
-    const currentCategory = categories.find(
+  const currentCategory = categories.find(
     (category) => category.id === params.id
   );
   return (
-    <main>
-      <Hero
-        pageTitle="お知らせ"
-        pageDesc={`TechNovaからのお知らせや最新情報をご案内します。サービス情報、実績公開、採用に関する情報などはこちらからご確認ください。`}
-      />
-            <Breadcrumbs name="お知らせ" slug="news" category={currentCategory} />
-      
+    <>
+      <Breadcrumbs name="お知らせ" slug="news" category={currentCategory} />
+
       <Section>
         <Inner>
           <SectionTitle
@@ -72,6 +62,6 @@ export default async function NewsPageId({ params }: Props) {
           />
         </Inner>
       </Section>
-    </main>
+    </>
   );
 }

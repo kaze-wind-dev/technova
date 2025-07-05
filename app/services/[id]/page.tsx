@@ -9,6 +9,9 @@ import ReactMarkdown from "react-markdown";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import styles from "./index.module.css";
 
+export const revalidate = 3600;
+
+
 type Props = {
   params: {
     id: string;

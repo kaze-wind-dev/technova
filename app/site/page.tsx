@@ -9,6 +9,7 @@ import SectionTitle from "@/components/SectionTitle";
 import CtaSection from "@/components/CtaSection";
 import LinkButton from "@/components/LinkButton";
 
+export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "サイトマップ",

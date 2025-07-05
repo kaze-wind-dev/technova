@@ -12,6 +12,8 @@ import LinkButton from "@/components/LinkButton";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FORM_URL } from "@/constants";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "事業内容",
   description:"TechNova株式会社の事業内容をご紹介いたします。"

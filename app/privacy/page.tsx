@@ -1,16 +1,14 @@
 import { Metadata } from "next";
-import { RECRUIT_URL } from "@/constants";
-import { recruitData, processData } from "@/libs/utiles";
 import Hero from "@/components/Hero";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import SectionTitle from "@/components/SectionTitle";
 import Inner from "@/components/Inner";
 import Section from "@/components/Section";
 
+export const revalidate = 604800;
+
 export const metadata: Metadata = {
   title: "プライバシーポリシー",
-  description:"TechNova株式会社のプライバシーポリシーページです"
-
+  description: "TechNova株式会社のプライバシーポリシーページです",
 };
 
 export default function RecruitPage() {

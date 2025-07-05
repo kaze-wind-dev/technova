@@ -4,6 +4,8 @@ import LinkButton from "@/components/LinkButton";
 import WorksDetail from "@/components/WorksDetail";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
+export const revalidate = 600;
+
 type Props = {
   params: {
     id: string;
@@ -31,7 +33,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 export default async function WorksDetailPage({ params }: Props) {
   const data = await getWorksDetail(params.id);
-
   return (
     <main>
       <Breadcrumbs name="事例紹介" slug="works" category={data.category} detail={data}/>
