@@ -42,7 +42,6 @@ const WorksDetail = ({ data }: Props) => {
             loading="lazy"
           />
         )}
-        {/* eslint-disable-next-line react/jsx-key */}
         <div
           className={styles.detailBody}
           dangerouslySetInnerHTML={{ __html: data.body }}
