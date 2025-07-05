@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getNewsList, getCategoryList } from "@/libs/microcms";
 
@@ -12,6 +13,11 @@ import Pagination from "@/components/Pagination";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 import CategoryFilter from "@/components/CategoryFilter";
+export const metadata: Metadata = {
+  title: "お知らせ",
+  description:"TechNovaからのお知らせや最新情報をご案内します。"
+
+};
 
 
 type Props = {

@@ -1,4 +1,5 @@
 // import Image from "next/image";
+import { Metadata } from "next";
 import { getNewsList, getCategoryList } from "@/libs/microcms";
 
 import { NEWS_LIST_LIMIT } from "@/constants";
@@ -17,7 +18,11 @@ type Props = {
     id: string;
   };
 };
+export const metadata: Metadata = {
+  title: "お知らせ",
+  description:"TechNovaからのお知らせや最新情報をご案内します。"
 
+};
 export default async function NewsListPage({ params }: Props) {
   const id = params.id;
   const { contents: news, totalCount } = await getNewsList({

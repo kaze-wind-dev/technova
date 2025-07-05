@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { getWorksList, getCategoryList } from "@/libs/microcms";
 
 import { WORKS_LIST_LIMIT } from "@/constants";
@@ -21,7 +22,10 @@ type Props = {
     current: string;
   };
 };
-
+export const metadata: Metadata = {
+  title: "事例紹介",
+  description:"TechNova株式会社の事例紹介ページです。"
+};
 export default async function WorksListPage({ params }: Props) {
   const current = parseInt(params.current as string, 10);
   const id = params.id;

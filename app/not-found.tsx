@@ -1,5 +1,12 @@
+import { Metadata } from "next";
 import LinkButton from "@/components/LinkButton";
 import SectionTitle from "@/components/SectionTitle";
+
+export const metadata: Metadata = {
+  title: "お探しのページは見つかりませんでした",
+  description:"TechNova株式会社の404ページです。"
+};
+
 export default function Home() {
   return (
     <main>

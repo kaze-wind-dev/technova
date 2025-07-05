@@ -1,8 +1,7 @@
 // import Image from "next/image";
+import { Metadata } from "next";
 import { getNewsList, getCategoryList } from "@/libs/microcms";
-
 import { NEWS_LIST_LIMIT } from "@/constants";
-
 import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
 import Inner from "@/components/Inner";
@@ -15,6 +14,12 @@ import LinkButton from "@/components/LinkButton";
 import { FORM_URL } from "@/constants";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
+export const metadata: Metadata = {
+  title: "お知らせ",
+  description:"TechNovaからのお知らせや最新情報をご案内します。"
+
+};
+
 export default async function NewsListPage() {
   const { contents: news, totalCount } = await getNewsList({
     limit: NEWS_LIST_LIMIT,
@@ -26,7 +31,7 @@ export default async function NewsListPage() {
     <main>
       <Hero
         pageTitle="お知らせ"
-        pageDesc={`TechNovaからのお知らせや最新情報をご案内します。サービス情報、実績公開、採用に関する情報などはこちらからご確認ください。`}
+        pageDesc={`TechNovaからのお知らせや最新情報をご案内します。`}
       />
       <Breadcrumbs name="お知らせ" slug="news" />
       <Section>

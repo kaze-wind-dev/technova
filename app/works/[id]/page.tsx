@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { getWorksDetail } from "@/libs/microcms";
 import LinkButton from "@/components/LinkButton";
 import WorksDetail from "@/components/WorksDetail";
@@ -9,6 +10,25 @@ type Props = {
   };
 };
 
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const data = await getWorksDetail(params.id);
+  return {
+    title: data.title,
+    description: data.description,
+    openGraph: {
+      title: data.title,
+      description: data.description,
+      images: [
+        {
+          url: data.thumbnail?.url ?? "ogp.jpg",
+          width: data.thumbnail?.width ?? 1200,
+          height: data.thumbnail?.height ?? 630,
+          alt: data.title ?? "TechNova株式会社 OGP画像",
+        },
+      ],
+    },
+  };
+}
 export default async function WorksDetailPage({ params }: Props) {
   const data = await getWorksDetail(params.id);
 

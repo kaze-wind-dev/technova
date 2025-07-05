@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { getWorksList, getCategoryList } from "@/libs/microcms";
 
 import { WORKS_LIST_LIMIT } from "@/constants";
@@ -13,6 +14,11 @@ import CategoryFilter from "@/components/CategoryFilter";
 import LinkButton from "@/components/LinkButton";
 import { FORM_URL } from "@/constants";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+
+export const metadata: Metadata = {
+  title: "事例紹介",
+  description:"TechNova株式会社の事例紹介ページです。"
+};
 
 export default async function WorksListPage() {
   const { contents: works, totalCount } = await getWorksList({

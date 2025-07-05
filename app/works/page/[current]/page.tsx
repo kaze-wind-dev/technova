@@ -1,8 +1,7 @@
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getWorksList, getCategoryList } from "@/libs/microcms";
-
 import { WORKS_LIST_LIMIT } from "@/constants";
-
 import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
 import Inner from "@/components/Inner";
@@ -19,7 +18,10 @@ type Props = {
     current: string;
   };
 };
-
+export const metadata: Metadata = {
+  title: "事例紹介",
+  description:"TechNova株式会社の事例紹介ページです。"
+};
 export default async function WorksPageId({ params }: Props) {
   console.log(params);
   const current = parseInt(params.current as string, 10);

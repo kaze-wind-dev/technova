@@ -1,6 +1,7 @@
 // import Image from "next/image";
+import { Metadata } from "next";
 import { RECRUIT_URL } from "@/constants";
-import { recruitData,processData } from "@/libs/utiles";
+import { recruitData, processData } from "@/libs/utiles";
 import Hero from "@/components/Hero";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import SectionTitle from "@/components/SectionTitle";
@@ -11,6 +12,12 @@ import LinkButton from "@/components/LinkButton";
 import CultureCard from "@/components/CultureCard";
 import RecruitItems from "@/components/RecruitItems";
 import ProcessList from "@/components/ProcessList";
+
+export const metadata: Metadata = {
+  title: "採用情報",
+  description:"TechNova株式会社の採用に関する情報を掲載しています。"
+
+};
 
 export default function RecruitPage() {
   return (
@@ -92,19 +99,19 @@ export default function RecruitPage() {
           <p className="leading-[2.5] tracing-wider text-center mb-8 lg:mb-10">
             以下のようなステップで進めていきますので、ご不明点があればお気軽にご相談ください。
           </p>
-          <ProcessList process={processData}/>
+          <ProcessList process={processData} />
         </Inner>
       </Section>
-       <CtaSection
+      <CtaSection
         title={`私たちの考えや事業に興味を持ってくださった方は、\nぜひお気軽にご応募ください。\nまずはカジュアルな面談からでも構いません。\nあなたのご経験や想いを、私たちに聞かせてください。`}
         btn={
           <LinkButton
-          href={RECRUIT_URL}
-          addClass="bg-primary text-white font-bold hover:bg-primary-hover btn-window-white mx-auto mt-8 mg:mt-9 lg:mt-10 text-[1.125rem] md:text-[1.25rem] lg:text-[1.5rem]"
-          blank={true}
-        >
-          <span>ご応募はこちら</span>
-        </LinkButton>
+            href={RECRUIT_URL}
+            addClass="bg-primary text-white font-bold hover:bg-primary-hover btn-window-white mx-auto mt-8 mg:mt-9 lg:mt-10 text-[1.125rem] md:text-[1.25rem] lg:text-[1.5rem]"
+            blank={true}
+          >
+            <span>ご応募はこちら</span>
+          </LinkButton>
         }
       />
     </main>

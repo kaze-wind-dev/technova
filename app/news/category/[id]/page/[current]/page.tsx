@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getNewsList, getCategoryList } from "@/libs/microcms";
 
@@ -18,7 +19,11 @@ type Props = {
     current: string;
   };
 };
+export const metadata: Metadata = {
+  title: "お知らせ",
+  description:"TechNovaからのお知らせや最新情報をご案内します。"
 
+};
 export default async function NewsPageId({ params }: Props) {
   const current = parseInt(params.current as string, 10);
   const id = params.id;

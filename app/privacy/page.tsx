@@ -1,4 +1,4 @@
-// import Image from "next/image";
+import { Metadata } from "next";
 import { RECRUIT_URL } from "@/constants";
 import { recruitData, processData } from "@/libs/utiles";
 import Hero from "@/components/Hero";
@@ -7,11 +7,19 @@ import SectionTitle from "@/components/SectionTitle";
 import Inner from "@/components/Inner";
 import Section from "@/components/Section";
 
+export const metadata: Metadata = {
+  title: "プライバシーポリシー",
+  description:"TechNova株式会社のプライバシーポリシーページです"
+
+};
 
 export default function RecruitPage() {
   return (
     <main>
-      <Hero pageTitle="プライバシーポリシー" pageDesc="このサイトは架空のサイトであり、本サイトに記載されている「TechNova株式会社」は存在しません"/>
+      <Hero
+        pageTitle="プライバシーポリシー"
+        pageDesc="このサイトは架空のサイトであり、本サイトに記載されている「TechNova株式会社」は存在しません"
+      />
       <Breadcrumbs name="プライバシーポリシー" slug="privacy" />
       <Section>
         <Inner>
@@ -19,7 +27,6 @@ export default function RecruitPage() {
             TechNova株式会社（以下、「当社」といいます）は、お客様の個人情報の保護を最重要と考え、以下の方針に基づき個人情報の適切な管理と運用を行います。
           </p>
 
-          
           <section className="my-16">
             <h3 className="font-bold text-[1.5rem] md:text-[1.75rem] lg:text-[2rem] leading-normal tracking-widest mb-3 md:mb-6 lg:mb-8 pl-5 lg:pl-6 relative before:content-[''] before:w-[6px] lg:before:w-[8px] before:h-full before:rounded-full before:absolute before:top-0 before:left-0 before:bg-primary">
               1. 法令等の遵守
